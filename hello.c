@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int add(int a, int b);
+
+
 int main(void)
 {
     printf("Hello, world!\n");
@@ -15,8 +18,9 @@ int main(void)
         return 1;
     }
 
+    
     for (int i = 0; i < 20; i++) {
-        array[i] = i + 1;
+        array[i] = 100 + rand() % 101;
     }
 
     printf("Allocated space for 20 integers:\n");
@@ -25,9 +29,17 @@ int main(void)
     }
     printf("\n");
 
+    int sum = add(5,10);
+    printf("The sum of 5 and 10 is : %d\n", sum);
+
     free(array);
 
     int y = 25;
     printf("The value of y is : %d\n", y);
+
     return 0;
+}
+
+int add(int a, int b) {
+    return a + b;
 }
