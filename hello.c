@@ -3,7 +3,7 @@
 #include <string.h>
 #include <time.h>
 
-typedef struct person {
+typedef struct {
     char name[50];
     int age;
 } Person;
@@ -38,11 +38,11 @@ int main(void)
     }
     printf("\n");
 
-    struct person sue;
-     strncpy(sue.name, "Sue", sizeof(sue.name));
-     sue.age = 20;
-     sue.name[sizeof(sue.name) - 1] = '\0';
-     printf("Person: %s is %d years old\n", sue.name, sue.age);
+    Person sue;
+    strncpy(sue.name, "Sue", sizeof(sue.name));
+    sue.age = 20;
+    sue.name[sizeof(sue.name) - 1] = '\0';
+    printf("Person: %s is %d years old\n", sue.name, sue.age);
 
     free(array);
 
